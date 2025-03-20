@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import axios from "axios";
 
-const API_ENDPOINT = "http://api-app.us-east-1.elasticbeanstalk.com/chat";
+const API_ENDPOINT = "/api/chat";
 
 export default function ChatApp() {
   const [messages, setMessages] = useState<{ sender: string; text: string }[]>([]);

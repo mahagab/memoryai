@@ -1,7 +1,14 @@
-import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: "/api/chat",
+        destination: "http://api-app.us-east-1.elasticbeanstalk.com/chat",
+      },
+    ];
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
