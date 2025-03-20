@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Chatbot AI - Frontend
 
-## Getting Started
+Este repositório contém a interface frontend de um **Chatbot com Inteligência Artificial**, desenvolvido utilizando **Next.js 15**, **TypeScript**, **Tailwind CSS** e **ShadCN UI**. O backend da aplicação foi construído em **Python Flask**, hospedado no AWS Elastic Beanstalk.
 
-First, run the development server:
+## 📌 Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 15** → Framework React para renderização otimizada.
+- **TypeScript** → Tipagem estática para melhor manutenção do código.
+- **Tailwind CSS** → Estilização rápida e responsiva.
+- **ShadCN UI** → Componentes estilizados para uma UI moderna.
+- **Axios** → Cliente HTTP para comunicação com a API.
+- **Flask (Backend)** → API criada em Python para processar as requisições do chatbot.
+
+## 🎯 Objetivo do Projeto
+
+Este projeto tem como objetivo criar uma **interface interativa** para um chatbot baseado em IA. O usuário pode enviar mensagens, e a IA responde dinamicamente, proporcionando uma experiência fluida e intuitiva.
+
+## 🏗 Estrutura do Projeto
+
+```
+📁 chatbot-frontend
+ ├── 📁 app/                 # Diretório principal do Next.js
+ │   ├── 📄 page.tsx         # Página principal do chat
+ │   ├── 📁 components/ui/   # Componentes reutilizáveis do ShadCN UI
+ ├── 📄 package.json         # Dependências e scripts do projeto
+ ├── 📄 tailwind.config.js   # Configuração do Tailwind CSS
+ ├── 📄 next.config.js       # Configuração do Next.js
+ ├── 📄 tsconfig.json        # Configuração do TypeScript
+ └── 📄 README.md            # Documentação do projeto
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚙️ Instalação e Execução
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1️⃣ Clone o repositório
+```sh
+git clone https://github.com/seu-usuario/chatbot-frontend.git
+cd chatbot-frontend
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2️⃣ Instale as dependências
+```sh
+npm install
+```
 
-## Learn More
+### 3️⃣ Configure a variável de ambiente
+Crie um arquivo `.env.local` na raiz do projeto e adicione a URL da API:
+```sh
+NEXT_PUBLIC_API_URL=https://api-app.us-east-1.elasticbeanstalk.com/chat
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 4️⃣ Inicie o servidor de desenvolvimento
+```sh
+npm run dev
+```
+Acesse **http://localhost:3000** para ver a aplicação rodando.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📬 Contato
+Caso tenha dúvidas ou sugestões, entre em contato pelo GitHub ou email. Contribuições são bem-vindas! 🚀
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
