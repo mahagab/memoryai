@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import axios from "axios";
 
-const API_ENDPOINT = "https://cors-anywhere.herokuapp.com/http://api-app.us-east-1.elasticbeanstalk.com/chat";
+const API_ENDPOINT = "http://api-app.us-east-1.elasticbeanstalk.com/chat";
+
 
 export default function ChatApp() {
   const [messages, setMessages] = useState<{ sender: string; text: string }[]>([]);
@@ -27,8 +28,10 @@ export default function ChatApp() {
 
       setMessages((prev) => [...prev, { sender: "bot", text: botMessage }]);
     } catch (error) {
+      console.error("Erro na requisição:", error); // Agora o erro é usado e o ESLint não reclama
       setMessages((prev) => [...prev, { sender: "bot", text: "Erro ao conectar com o servidor." }]);
     }
+    
 
     setLoading(false);
   };
