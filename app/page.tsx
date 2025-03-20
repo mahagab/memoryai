@@ -13,6 +13,13 @@ export default function ChatApp() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      sendMessage();
+    }
+  };
+  
   useEffect(() => {
     console.log("Mensagens renderizadas:", messages);
   }, [messages]);
@@ -70,12 +77,13 @@ export default function ChatApp() {
       {/* Input de Mensagem */}
       <div className="p-4 bg-gray-800 border-t border-gray-700 flex items-center gap-2 w-full fixed bottom-0 left-0">
         <div className="flex w-full max-w-4xl mx-auto bg-gray-800 p-2 rounded-lg items-center gap-2">
-          <Input 
-            type="text" 
-            placeholder="Digite uma mensagem..." 
-            className="flex-1 px-4 py-2 border rounded-full bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
-            value={input} 
-            onChange={(e) => setInput(e.target.value)}
+        <Input 
+              type="text" 
+              placeholder="Digite uma mensagem..." 
+              className="flex-1 px-4 py-2 border rounded-full bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
+              value={input} 
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyPress}  // Captura a tecla Enter
           />
           <Button onClick={sendMessage} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full shadow-md">Enviar</Button>
         </div>
